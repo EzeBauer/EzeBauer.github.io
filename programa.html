@@ -1,0 +1,57 @@
+<canvas width="600" height="400"> </canvas>
+<script>
+     var pantalla = document.querySelector("canvas");
+     var pincel = pantalla.getContext("2d");
+</script>
+
+<canvas width="600" height="400"></canvas>
+<!-- Con la etiqueta definida, creamos un script para captura la pantalla con el pincel. Como vamos a diseñar en 2d, pasamos ese valor para la función getContext del objeto pantalla.
+ -->
+ <script>
+     var pantalla = document.querySelector("canvas");
+     var pincel = pantalla.getContext("2d");
+     //cabeza
+     pincel.fillStyle = 'darkgreen';
+     pincel.fillRect(200, 50, 350 ,300);
+     //ojos
+     pincel.fillStyle = 'black';
+     pincel.fillRect(250, 110, 90, 90);
+     pincel.fillRect(410, 110, 90, 90);
+     //nariz
+     pincel.fillRect(340, 200, 70, 100);
+     //boca
+     pincel.fillRect(300, 240, 40, 110);
+     pincel.fillRect(410, 240, 40, 110);
+ </script>
+
+<!-- Con el pincel en mano podemos diseñar la cabeza verde de Creeper. Las coordenadas iniciales son 200 en el eje X y 50 en el eje Y; con una base de 350 pixeles y altura de 300 pixeles. -->
+<!-- Ahora vienen los ojos negros, el ojo izquierdo inicia en las coordenadas X=250 y Y=110, por su parte el ojo derecho inicia en las coordenadas X=410 y Y=110, las dos figuras tienen dimensiones de 90 de base por 90 de altura. -->
+<!-- La nariz queda entre los ojos. Ten en cuenta que el primer ojo comienza en la coordenada X = 250 y tiene una base de 90. Como la nariz debe comenzar después del primer ojo, su X inicial debe ser X inicial del primer ojo más su base, que sería 250 + 90 = 340, siendo esta la posición inicial de la nariz. La coordenada vertical Y de la nariz es al final de los ojos, Y inicial del ojo más su altura, por lo tanto, tenemos 110 + 90 = 200. -->
+<!-- Al final diseñamos la boca. Cada parte de la boca es un rectángulo de 40 de anchura por 110 de altura. Las coordenadas de la primera parte de la boca (izquierda) es el X inicial de la nariz menos 40, siendo 340 - 40 = 300. La coordenada X de la segunda parte de la boca (derecha) comienza al final de la nariz, esto sería 340 + 70 = 410. -->.
+
+<!-- ESCUADRA -->
+
+<!-- escuadra.html -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle='black';
+    pincel.beginPath();
+    pincel.moveTo(50, 50);
+    pincel.lineTo(50, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle='white';
+    pincel.beginPath(); //INICIAMOS EL PATH
+    pincel.moveTo(100, 175); //MOVEMOS EL PINCEL A UNA POCISION
+    pincel.lineTo(100, 350);//DIBUJAMOS LA LINEA
+    pincel.lineTo(275, 350);
+    pincel.fill(); //RELLENA LA FIGURA
+
+
+</script>

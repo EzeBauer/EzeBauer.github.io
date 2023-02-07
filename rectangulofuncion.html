@@ -1,0 +1,72 @@
+<!-- Pedro creó una función que dibuja un rectángulo que recibe 4 parámetros: la coordenada X, la coordenada Y, el color y la altura del rectángulo. El único valor constante es la base del rectángulo y es igual a 50 píxeles.
+ -->
+<canvas width="600" height="400"> </canvas>
+<script>
+    function dibujarRectangulo(x,y,color,altura){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        pincel.fillStyle = color;
+        pincel.fillRect(x,y,50,altura); 
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x,y,50,altura);
+    }
+</script> 
+<!-- Él desea que al momento de llamar a la función dibujarRectangulo, la variable altura sea un número aleatorio entre 0 y 50. 
+-->
+<!-- dibujarRectangulo(50,50,"green",Math.round(Math.random()*50));¡Correcto! La llamada a la función tiene todos los parámetros en el orden y forma correcta, el último parámetro que es el valor de la altura está usando dos fórmulas matemáticas que ya hemos visto, Math.round() que redondea a un entero el número y Math.random() que nos devuelve un número aleatorio entre 0 y 1, luego lo multiplicamos por 50 para poder obtener un número entre 0 y 50.
+ -->
+
+
+ <canvas width="600" height="400"> </canvas>
+
+<script>
+function dibujarCuadrado(x,y,color){
+var pantalla = document.querySelector("canvas");
+var pincel = pantalla.getContext("2d");
+pincel.fillStyle = color;
+pincel.fillRect(x,y,50,50);
+pincel.strokeStyle = "black";
+pincel.strokeRect(x,y,50,50);
+}
+
+
+
+var x = 0;
+
+while (x <600) {
+dibujarCuadrado(x,0,"red");
+dibujarCuadrado(x,50, "yellow");
+dibujarCuadrado(x, 100, "green");
+x =x +50;
+
+}
+
+ 
+
+for (var x =0; x < 600;x = x + 50){
+dibujarCuadrado(x,0,"red");
+dibujarCuadrado(x,50, "yellow");
+dibujarCuadrado(x, 100, "green");
+}
+
+function dibujarCirculo(x, y, radio, color) {
+
+pincel.fillStyle = color;
+pincel.beginPath();
+pincel.arc(x, y, radio, 0, 2*3.14);
+pincel.fill();
+}
+dibujarCirculo(300, 220, 10, "blue");
+
+function dibujarFlor() {
+    dibujarCirculo(300, 220, 10, "blue");
+    dibujarCirculo(300, 200, 10, "red");
+    dibujarCirculo(300, 180, 10, "yellow");
+    dibujarCirculo(280, 200, 10, "orange");
+    dibujarCirculo(320, 200, 10, "black");
+  }
+ dibujarFlor();
+
+</script> 
+
+ 
